@@ -1,6 +1,7 @@
+import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup {
+public class StudentGroup implements Iterable<Student>{
     private List<Student> studentList;
 
     public StudentGroup(List<Student> studentList) {
@@ -13,5 +14,13 @@ public class StudentGroup {
 
     public void addToGroup(Student student){
         studentList.add(student);
-    };
+    }
+
+    @Override
+    public Iterator<Student> iterator() {
+        return new StudentGroupIterator(this);
+    }
+    public void deliteFromGroup(Student student){
+        studentList.remove(student);
+    }
 }
