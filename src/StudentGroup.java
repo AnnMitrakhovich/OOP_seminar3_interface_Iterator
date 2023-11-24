@@ -8,6 +8,11 @@ public class StudentGroup implements Iterable<Student>{
         this.studentList = studentList;
     }
 
+    public List<Student> setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+        return studentList;
+    }
+
     public List<Student> getStudentList() {
         return studentList;
     }

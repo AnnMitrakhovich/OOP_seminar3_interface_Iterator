@@ -1,3 +1,7 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class StudentGroupService {
@@ -29,5 +33,16 @@ public class StudentGroupService {
             }
         }
         return studentGroup;
+    }
+
+    public List<Student> sortListOfStudents(StudentGroup studentGroup) {
+        List<Student> studentList = new ArrayList<>(studentGroup.getStudentList());
+        Collections.sort(studentList);
+        return studentGroup.setStudentList(studentList);
+    }
+    public List<Student> getSortedByFIOStudentGroup(StudentGroup studentGroup){
+        List<Student> students = new ArrayList<>(studentGroup.getStudentList());
+        students.sort(new StudentComparator());
+        return studentGroup.setStudentList(students);
     }
 }

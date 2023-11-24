@@ -1,4 +1,4 @@
-public class Student {
+public class Student implements Comparable<Student>{
     private String firstName;
     private String secondName;
     private String lastName;
@@ -52,4 +52,11 @@ public class Student {
                 ", Студенческий номер =" + studentId +
                 '}';
     }
+
+    @Override
+    public int compareTo(Student o) {
+        return Integer.compare(this.studentId, o.studentId);
+    }
+
+
 }
