@@ -2,6 +2,7 @@ import java.util.List;
 
 public class StudentGroupController {
     StudentGroupService studentGroupService = new StudentGroupService();
+    StreamService streamService = new StreamService();
 
     public StudentGroup createStudentGroup(List<Student> studentList) {
         return studentGroupService.createStudentGroup(studentList);
@@ -25,5 +26,26 @@ public class StudentGroupController {
     }
     public void sortByName(StudentGroup studentGroup) {
         studentGroupService.getSortedByFIOStudentGroup(studentGroup);
+    }
+
+    public Stream createStStream() {
+        return studentGroupService.createStream();
+    }
+    public void addStudentGroupToStream(Stream stream, StudentGroup studentGroup) {
+        studentGroupService.addStudentGroupToStream(stream, studentGroup);
+    }
+
+    public void printSteam(Stream stream) {
+        System.out.println(stream);
+    }
+    public List<Stream> createStreamList(Stream stream) {
+        return streamService.createStreamList(stream);
+    }
+    public List<Stream> addToStreamList(List<Stream> streams, Stream stream) {
+        return streamService.addToStreamList(streams, stream);
+    }
+
+    public void sortStreams(List<Stream> streams) {
+        streamService.sortStreams(streams);
     }
 }

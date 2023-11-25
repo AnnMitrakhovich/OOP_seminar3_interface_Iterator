@@ -14,8 +14,13 @@ public class StudentGroupService {
     public Student createStudent (String firstName, String secondName, String lastName, int studentID) {
         return new Student(firstName, secondName, lastName, studentID);
     }
+    public Stream createStream () {
+        return new Stream();
+    }
 
-
+    public void addStudentGroupToStream(Stream stream, StudentGroup studentGroup) {
+        stream.addStudentGroupToStream(studentGroup);
+    }
     public StudentGroup getStudentGroup() {
         return studentGroup;
     }
@@ -45,4 +50,9 @@ public class StudentGroupService {
         students.sort(new StudentComparator());
         return studentGroup.setStudentList(students);
     }
+
+        public void printSteam(Stream stream) {
+        stream.toString();
+    }
+
 }

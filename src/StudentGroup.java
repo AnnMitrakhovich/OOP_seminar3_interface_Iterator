@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroup implements Iterable<Student>{
-    private List<Student> studentList;
+    protected List<Student> studentList;
 
     public StudentGroup(List<Student> studentList) {
         this.studentList = studentList;
